@@ -1,0 +1,46 @@
+<PassgenWidget>:
+    BoxLayout:
+        orientation:'vertical'
+        size: root.width, root.height
+
+        Image:
+            source: 'Icon.jpg'
+            # size_hint_x: 0.4
+            allow_stretch: False
+
+        Slider:
+            id: slider
+            orientation: "horizontal"
+            min: 4 # minimum value of Slider
+            max: 56 # maximum value of Slider
+            value: 4  # initial value of Slider
+            # when slider moves then to increase value
+            on_value: root.on_slide(self)
+            size_hint: 1,.15
+        
+        Label:
+            id: label1
+            text: str(int(root.n))
+            background_color: (1,1,1,1)
+            font_size: 36
+
+        TextInput:
+            id: input_box
+            text: ">>>"
+            font_size: 28
+            multiline: True
+            valign: "middle"
+            size_hint: (1, 0.5)
+            background_color: (20/255, 20/255, 30/255, 1)
+            foreground_color: (1, 1, 1, 1)
+
+        Button:
+            text:"Generate"
+            background_color: (52/255, 82/255, 235/255, 1)
+            size_hint_y: None
+            height: 50
+            on_press: root.on_button_click(self)
+
+        
+            
+
